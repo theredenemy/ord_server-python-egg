@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV         USER=container
 ENV         HOME=/home/container
+ENV			VENV=/home/container/venv
 WORKDIR     /home/container
 
 STOPSIGNAL	SIGINT

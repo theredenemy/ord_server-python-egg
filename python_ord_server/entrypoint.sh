@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/container
+cd ${HOME}
 
 # Make internal Docker IP address available to processes.
 INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
@@ -11,9 +11,9 @@ python --version
 
 if [ ! -d .git ]; then
     if [ -n "${GIT_ADDRESS}" ]; then
-        git clone "${GIT_ADDRESS}" .temp
-        mv .temp/* .temp/.* . 2>/dev/null
-        rm -rf .temp
+        git clone "${GIT_ADDRESS}" ${HOME}/.temp
+        mv ${HOME}/.temp/* ${HOME}/.temp/.* ${HOME} 2>/dev/null
+        rm -rf ${HOME}/.temp
     else
         exit 1
     fi
@@ -21,15 +21,15 @@ elif [[ "${AUTO_UPDATE}" == "1" ]]; then
     git pull
 fi
 
-if [ ! -d "venv"]; then
+if [ ! -d venv ]; then
     python -m venv venv
-    ./venv/bin/pip install --upgrade pip
+    .${VENV}/bin/pip install --upgrade pip
 fi
 
-source venv/bin/activate
+source ${VENV}/bin/activate
 
-if [ -f "${REQUIREMENTS_FILE}"]; then
-    pip install --no-cache-dir -r "${REQUIREMENTS_FILE}"
+if [ -f ${HOME}/${REQUIREMENTS_FILE} ]; then
+    pip install --no-cache-dir -r ${HOME}/${REQUIREMENTS_FILE}
 fi
 
 # Replace Startup Variables
