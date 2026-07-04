@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2026-07-04T02:39:43+00:00",
+    "exported_at": "2026-07-04T03:41:52+00:00",
     "name": "ordinance_server",
     "author": "feasbycorbin@gmail.com",
     "description": "ordinance_server",
@@ -13,7 +13,7 @@
         "Python 3.14": "ghcr.io\/theredenemy\/yolks:python_ord_server_3.14"
     },
     "file_denylist": [],
-    "startup": "if [[ -d .git ]] && [[ \"{{AUTO_UPDATE}}\" == \"1\" ]]; then git pull; fi; if [[ ! -z \"{{PY_PACKAGES}}\" ]]; then pip install -U --prefix .local {{PY_PACKAGES}}; fi; if [[ -f \/home\/container\/${REQUIREMENTS_FILE} ]]; then pip install -U --prefix .local -r ${REQUIREMENTS_FILE}; fi; \/usr\/local\/bin\/python \/home\/container\/{{PY_FILE}}",
+    "startup": "\/usr\/local\/bin\/python \/home\/container\/{{PY_FILE}}",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"Press CTRL+C to quit\"\r\n}",
