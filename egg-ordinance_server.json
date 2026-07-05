@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2026-07-04T03:41:52+00:00",
+    "exported_at": "2026-07-05T02:19:46+00:00",
     "name": "ordinance_server",
     "author": "feasbycorbin@gmail.com",
     "description": "ordinance_server",
@@ -18,7 +18,7 @@
         "files": "{}",
         "startup": "{\r\n    \"done\": \"Press CTRL+C to quit\"\r\n}",
         "logs": "{}",
-        "stop": "^C"
+        "stop": "exit"
     },
     "scripts": {
         "installation": {
