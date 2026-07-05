@@ -42,7 +42,9 @@ source ${VENV}/bin/activate
 if [ -f ${HOME}/${REQUIREMENTS_FILE} ]; then
     pip install --no-cache-dir -r ${HOME}/${REQUIREMENTS_FILE}
 fi
-
+if [[ ! -z ${PY_PACKAGES} ]]; then
+    pip install --no-cache-dir -U ${PY_PACKAGES}
+fi
 # Replace Startup Variables
 MODIFIED_STARTUP=$(echo -e $(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
 echo -e ":/home/container$ ${MODIFIED_STARTUP}"
