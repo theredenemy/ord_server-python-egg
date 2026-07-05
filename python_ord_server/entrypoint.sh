@@ -46,3 +46,5 @@ echo -e ":/home/container$ ${MODIFIED_STARTUP}"
 
 # Run the Server
 eval ${MODIFIED_STARTUP}
+echo "SERVER SHUTDOWN $?"
+exit $?
