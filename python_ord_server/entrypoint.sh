@@ -32,6 +32,7 @@ fi
 if [ ! -d ${VENV}/lib/${PYTHON_VENV_VERSION} ]; then
     if [ -d ${VENV} ]; then
         rm -rf ${VENV}
+    fi
     python -m venv ${VENV}
     ${VENV}/bin/pip install --upgrade pip
 fi
