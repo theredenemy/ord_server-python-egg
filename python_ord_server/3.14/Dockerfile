@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ENV         USER=container
 ENV         HOME=/home/container
 ENV			VENV=/home/container/venv
+ENV			PYTHON_VENV_VERSION=python3.14
 WORKDIR     /home/container
 
 STOPSIGNAL	SIGINT

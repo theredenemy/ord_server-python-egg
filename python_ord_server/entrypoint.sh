@@ -29,8 +29,10 @@ elif [[ "${AUTO_UPDATE}" == "1" ]]; then
     git pull
 fi
 
-if [ ! -d venv ]; then
-    python -m venv venv
+if [ ! -d ${VENV}/lib/${PYTHON_VENV_VERSION} ]; then
+    if [ -d ${VENV} ]; then
+        rm -rf ${VENV}
+    python -m venv ${VENV}
     ${VENV}/bin/pip install --upgrade pip
 fi
 
