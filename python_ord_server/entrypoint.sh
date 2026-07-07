@@ -48,7 +48,7 @@ fi
 # Replace Startup Variables
 MODIFIED_STARTUP=$(echo -e $(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
 echo -e ":/home/container$ ${MODIFIED_STARTUP}"
-if [ ! -d ${HOME}/tmp ]
+if [ ! -d ${HOME}/tmp ]; then
     mkdir ${HOME}/tmp
 fi
 export TMPDIR=${HOME}/tmp
